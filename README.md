@@ -7,7 +7,7 @@
 - 骨髓动画
 
 ## 使用
-`web环境下浏览器中打开index.html预览效果，index-edit.html进入热点编辑`
+`web环境下浏览器中打开index.html预览效果，index-edit.html进入编辑模式`
 
 ## 主要文件
 
