@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <div id="mouseTips" class="mouse-tips"></div>
+    <div class="buttons">
+      <div class="right-bottom">
+        <ul>
+          <li id="autoRotate" title="自动旋转">
+            <img
+              src="images/btn-ani-play.png"
+              alt=""
+              class="icon"
+            />
+            <span class="text">自动旋转</span>
+          </li>
+        </ul>
+      </div>
+      <div class="right-top">
+        <ul>
+          <li id="btnBgMusic" class="btn-music" title="背景音乐">
+            <img
+              src="images/btn-music-on.png"
+              alt=""
+              class="icon"
+            />
+          </li>
+          <li id="btnLink" class="btn-link" title="链接">
+            <img
+              src="images/btn-link.png"
+              alt=""
+              class="icon"
+            />
+          </li>
+          <li id="btnBuy" class="btn-buy" title="购买">
+            <img
+              src="images/btn-buy-link.png"
+              alt=""
+              class="icon"
+            />
+          </li>
+          <li id="btnAdvisory" class="btn-advisory" title="咨询">
+            <img
+              src="images/btn-consulting.png"
+              alt=""
+              class="icon"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="plugins">
+      <!-- bgm -->
+      <audio id="bgMusic" loop autoplay>
+        <source src="" type="audio/mpeg" />
+      </audio>
+      <!-- 加载中 -->
+      <div id="ajaxloading">
+        <img src="images/loading.gif" />
+      </div>
+      <!-- 咨询 -->
+      <div id="productMask">
+        <div id="closeProductMask" class="closeProductMask"></div>
+        <div id="productBox" class="advisoryBox">
+          <div class="form">
+            <div class="advisoryBoxTitle">
+              <h3>提交订购咨询</h3>
+              <h4>
+                请认真填写此表格，我们的专业顾问会尽快与您取得联系，并为您提供1对1的专业服务。
+              </h4>
+            </div>
+            <ul>
+              <li>
+                <span>意向产品：</span
+                ><input type="hidden" name="orderProduct" value="26266" /><span
+                  class="orderTit"
+                ></span>
+              </li>
+              <li>
+                <span><b>*</b>姓名：</span
+                ><input type="text" name="orderName" />
+              </li>
+              <li>
+                <span><b>*</b>电话：</span><input type="text" name="orderTel" />
+              </li>
+              <li>
+                <span><b>*</b>邮箱：</span
+                ><input type="text" name="orderEmail" />
+              </li>
+              <li class="other">
+                <span>需求备注：</span><textarea name="orderOter"></textarea>
+              </li>
+            </ul>
+            <div class="orderMaskBtn">
+              <span id="orderMaskBtn" onclick="orderSubmit()">提交</span>
+            </div>
+          </div>
+          <!--        提交成功时-->
+          <div class="orderResult orderResult-ok" style="display: none;">
+            <div><span class="ok">提交成功！</span></div>
+          </div>
+          <!--        提交失败-->
+          <div class="orderResult orderResult-error" style="display: none;">
+            <div>
+              <span class="error">提交失败！</span
+              ><a href="javascript:void(0)" onclick="returnOrder()"
+                >请返回&gt;&gt;</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 图文弹窗 -->
+      <div id="modalMask" class="modal-mask">
+        <div id="closeModalMask" class="close-modal-mask"></div>
+        <div class="modal-container">
+          <div class="header">
+            <h1 id="modalTitle" class="text"></h1>
+          </div>
+          <div id="modalBody" class="body">
+            <h2></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--引入three.js三维引擎-->
+    <script src="js/three.js"></script>
+    <!-- 控制 -->
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/TransformControls.js"></script>
+    <!-- 引入fbx模型加载库FBXLoader -->
+    <script src="js/FBXLoader.js"></script>
+    <script src="js/inflate.min.js"></script>
+    <script src="js/NURBSCurve.js"></script>
+    <script src="js/NURBSUtils.js"></script>
+    <!-- 事件插件 -->
+    <!-- <script src="js/onEvent.js"></script> -->
+    <script src="js/index.js"></script>
+  </body>
+</html>

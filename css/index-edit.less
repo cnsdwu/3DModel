@@ -1,0 +1,149 @@
+@import "base";
+body {
+  overflow: hidden;
+}
+.navbar{
+  display: none;
+}
+.contextmenu{
+  position: absolute;
+  background-color: #fff;
+  display: none;
+  &.show{
+    display: block;
+  }
+  // padding: 10px;
+  .name{
+    padding: 5px 10px;
+    line-height: 1.6em;
+    border-bottom: 1px solid #ccc;
+  }
+  ul{
+    li{
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+      background-color: #ccc;
+    }
+
+    }
+  }
+}
+
+.editor {
+  position: fixed ;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 100;
+  pointer-events: none;
+  .center-top {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%);
+  }
+  .right-top {
+    pointer-events: all;
+    position: absolute;
+    right: 0;
+    top: 0;
+    .btn {
+      display: block;
+      margin: 0 auto;
+    }
+    input{
+      vertical-align: middle;
+    }
+  }
+  .center-center {
+    display: none;
+    &.show{
+      display: block;
+    }
+    .form-mask{
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      pointer-events: all;
+      z-index: 100;
+    }
+      
+    
+    .form-container {
+      pointer-events: all;
+      position: absolute !important;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 10px;
+      z-index: 200;
+      .form-group {
+        padding: 10px 0;
+        &.form-title,&.form-color{
+          .label{
+            display: inline-block;
+          }
+          .input{
+            display: inline-block;
+          }
+        }
+        .label {
+          font-size: 1.2em;
+        }
+        .input {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+// html弹框
+.modal-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  .close-modal-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background: rgba(181, 181, 181, 0.6);
+  }
+  .modal-container {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background-color: #fff;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    .header {
+      border-bottom: 1px solid;
+      padding-bottom: 10px;
+      .text {
+        text-align: center;
+        font-size: 1.3em;
+      }
+    }
+    .body {
+      overflow: auto;
+      height: 93%;
+      margin: 10px;
+    }
+  }
+}

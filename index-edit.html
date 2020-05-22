@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no"
+    />
+    <title></title>
+    <link rel="stylesheet" href="css/index-edit.css" />
+  </head>
+
+  <body>
+    <div id="contextmenu" class="contextmenu">
+      <div class="name">名称</div>
+      <ul>
+        <li id="btnEditor">编辑</li>
+        <li id="btnDelete">删除</li>
+      </ul>
+    </div>
+    <div class="editor">
+      <div class="center-top">
+        <p>请按对应键位切换不同编辑模式</p>
+        <p>"W" 移动位置 | "E" 旋转 | "R" 缩放 | "+/-" 调整坐标系大小</p>
+        <p>"Q" 切换坐标系为物体/空间 | "Shift" 对齐网格</p>
+        <p>
+          "X" 切换 X 轴 | "Y" 切换 Y 轴 | "Z" 切换 Z 轴 | "Spacebar"
+          切换启关变换
+        </p>
+      </div>
+      <div id="centerCenter" class="center-center">
+        <div id="formMask" class="form-mask"></div>
+        <div class="form-container">
+          <div class="form-group form-title">
+            <div class="label">标题</div>
+            <div class="input">
+              <input id="title" type="text" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="label">内容</div>
+            <div class="input">
+              <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+              <!-- 加载编辑器的容器 -->
+              <script id="container" name="content" type="text/plain"></script>
+            </div>
+          </div>
+          <div class="form-group form-color">
+            <div class="label">热点颜色</div>
+            <div class="input">
+              <input id="color" type="color" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input">
+              <button id="formSubmit">提交</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-top">
+        <div class="group">
+          <button id="btnSave" class="btn">保存更改</button>
+        </div>
+        <div class="group">
+          <button id="btnAddHotspot" class="btn">添加热点</button>
+        </div>
+        <div class="group">
+          <button id="btnSetAngle" class="btn">将当前视角设为初使视角</button>
+        </div>
+        <div class="group">
+          <span>点光源功率</span>
+          <input type="range" id="lightPower" min="-10" max="10" step="0.1">
+        </div>
+        <div class="group">
+          <span>环境光强度</span>
+          <input type="range" id="ambientColor" min="0" max="255" step="1">
+        </div>
+      </div>
+    </div>
+    <!--引入three.js三维引擎-->
+    <script src="js/three.js"></script>
+    <!-- 控制 -->
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/TransformControls.js"></script>
+    <!-- 引入fbx模型加载库FBXLoader -->
+    <script src="js/FBXLoader.js"></script>
+    <script src="js/inflate.min.js"></script>
+    <script src="js/NURBSCurve.js"></script>
+    <script src="js/NURBSUtils.js"></script>
+    <!-- ueditor -->
+    <script src="js/ueditor/ueditor.config.js"></script>
+    <script src="js/ueditor/ueditor.all.min.js"></script>
+    <script src="js/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <!-- 事件插件 -->
+    <!-- <script src="js/onEvent.js"></script> -->
+    <!-- 提示信息 -->
+    <script src="js/component.js"></script>
+    <script src="js/index-edit.js"></script>
+    <script>
+      var ue = UE.getEditor("container", {
+        initialFrameHeight: 400,
+        autoHeightEnabled: false,
+        initialFrameWidth: 1000,
+      });
+    </script>
+  </body>
+</html>

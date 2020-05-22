@@ -1,0 +1,39 @@
+{
+    "status":1,
+    "msg":{
+        "rname":"3d",
+        "link":"http://wwzc.cc",
+        "background":"images/background.jpg",
+        "music":"data/music.mp3",
+        "buy_link":"http://wwzc.cc",
+        "consulting_flag":"1",
+        "fbx":"data/fbx/Samba Dancing.fbx",
+        "camera_position_x":"474.67759409229",
+        "camera_position_y":"165.11607764813",
+        "camera_position_z":"507.62477432627",
+        "controls_position_x":"0",
+        "controls_position_y":"0",
+        "controls_position_z":"0",
+        "hotspot":[
+            {
+                "id":"73",
+                "color":"#ff0080",
+                "position_x":"3.9475543360745",
+                "position_y":"-0.99083516539322",
+                "position_z":"-16.344448080119",
+                "scale_x":"77.037019589242",
+                "scale_y":"0.013881887208617",
+                "scale_z":"76.05123619423",
+                "rotation_x":"0",
+                "rotation_y":"0",
+                "rotation_z":"0",
+                "title":"测试内容",
+                "html":"<p>1</p>",
+                "radius":"1",
+                "ring_around_id":"112"
+            }
+        ],
+        "point_light_power":"2.8",
+        "ambient_light_color":"185"
+    }
+}

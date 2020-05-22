@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+ul,
+p,
+h1,
+h2,
+h3,
+body {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+body {
+  overflow: hidden;
+}
+.navbar {
+  display: none;
+}
+.contextmenu {
+  position: absolute;
+  background-color: #fff;
+  display: none;
+}
+.contextmenu.show {
+  display: block;
+}
+.contextmenu .name {
+  padding: 5px 10px;
+  line-height: 1.6em;
+  border-bottom: 1px solid #ccc;
+}
+.contextmenu ul li {
+  padding: 5px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.contextmenu ul li:hover {
+  background-color: #ccc;
+}
+.editor {
+  position: fixed ;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+.editor .center-top {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%);
+}
+.editor .right-top {
+  pointer-events: all;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.editor .right-top .btn {
+  display: block;
+  margin: 0 auto;
+}
+.editor .right-top input {
+  vertical-align: middle;
+}
+.editor .center-center {
+  display: none;
+}
+.editor .center-center.show {
+  display: block;
+}
+.editor .center-center .form-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: all;
+  z-index: 100;
+}
+.editor .center-center .form-container {
+  pointer-events: all;
+  position: absolute !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 10px;
+  z-index: 200;
+}
+.editor .center-center .form-container .form-group {
+  padding: 10px 0;
+}
+.editor .center-center .form-container .form-group.form-title .label,
+.editor .center-center .form-container .form-group.form-color .label {
+  display: inline-block;
+}
+.editor .center-center .form-container .form-group.form-title .input,
+.editor .center-center .form-container .form-group.form-color .input {
+  display: inline-block;
+}
+.editor .center-center .form-container .form-group .label {
+  font-size: 1.2em;
+}
+.editor .center-center .form-container .form-group .input {
+  margin-top: 10px;
+}
+.modal-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+}
+.modal-mask .close-modal-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  background: rgba(181, 181, 181, 0.6);
+}
+.modal-mask .modal-container {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background-color: #fff;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.modal-mask .modal-container .header {
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+}
+.modal-mask .modal-container .header .text {
+  text-align: center;
+  font-size: 1.3em;
+}
+.modal-mask .modal-container .body {
+  overflow: auto;
+  height: 93%;
+  margin: 10px;
+}

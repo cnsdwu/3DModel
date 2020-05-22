@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+ul,
+p,
+h1,
+h2,
+h3,
+body {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
